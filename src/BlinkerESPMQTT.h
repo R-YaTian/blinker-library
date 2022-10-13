@@ -16,7 +16,7 @@
 #include "Adapters/BlinkerMQTT.h"
 #include "Blinker/BlinkerApi.h"
 #ifndef ARDUINOJSON_VERSION_MAJOR
-#include "modules/ArduinoJson/ArduinoJson.h"
+#include <ArduinoJson.h>
 #endif
 
 #if defined(ESP8266)
