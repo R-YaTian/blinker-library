@@ -6,7 +6,7 @@
         #define BLINKER_ARDUINOJSON
     #endif
     #ifndef ARDUINOJSON_VERSION_MAJOR
-    #include "modules/ArduinoJson/ArduinoJson.h"
+    #include <ArduinoJson.h>
     #endif
 
     #if defined(ESP32)
@@ -17,7 +17,7 @@
 #else
     #if defined (BLINKER_ARDUINOJSON)
         #ifndef ARDUINOJSON_VERSION_MAJOR
-        #include "modules/ArduinoJson/ArduinoJson.h"
+        #include <ArduinoJson.h>
         #endif
     #endif
 #endif
@@ -90,7 +90,7 @@ class BlinkerSerialBLE : public BlinkerApi
                     BLINKER_LOG(BLINKER_F("SerialBLE initialized..."));
                 }
         #elif defined(ESP8266)
-            if (ss_rx_pin == RX && ss_tx_pin == TX) {
+            if (ss_rx_pin == D9 && ss_tx_pin == D10) {
                 BApi::begin();
                 Serial.begin(ss_baud);
                 Transp.begin(Serial, true);
