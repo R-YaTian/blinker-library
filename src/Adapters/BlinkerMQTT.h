@@ -40,7 +40,7 @@
 #include "../modules/mqtt/Adafruit_MQTT.h"
 #include "../modules/mqtt/Adafruit_MQTT_Client.h"
 #ifndef ARDUINOJSON_VERSION_MAJOR
-#include "../modules/ArduinoJson/ArduinoJson.h"
+#include <ArduinoJson.h>
 #endif
 // #include "Adapters/BlinkerMQTT.h"
 #include "../Blinker/BlinkerConfig.h"
