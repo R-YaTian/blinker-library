@@ -7828,14 +7828,14 @@ float BlinkerApi::gps(b_gps_t axis)
     char * BlinkerApi::bridgeKey(uint8_t num)
     {
         if (num) return _Bridge[num - 1]->getKey();
-        else return "";
+        else return (char*) "";
     }
 
 
     char * BlinkerApi::bridgeName(uint8_t num)
     {
         if (num) return _Bridge[num - 1]->getName();
-        else return "false";
+        else return (char*) "false";
     }
 
 
@@ -7876,7 +7876,7 @@ float BlinkerApi::gps(b_gps_t axis)
 
             BProto::subPrint(data);
 
-            return "";
+            return (char*) "";
         #endif
     }
     #endif
@@ -8464,33 +8464,33 @@ void BlinkerApi::attachSwitch(blinker_callback_with_string_arg_t _func)
 char * BlinkerApi::widgetName_str(uint8_t num)
 {
     if (num) return _Widgets_str[num - 1]->getName();
-    else return "";
+    else return (char*) "";
 }
 
 // #if defined(BLINKER_BLE)
     char * BlinkerApi::widgetName_joy(uint8_t num)
     {
         if (num) return _Widgets_joy[num - 1]->getName();
-        else return "";
+        else return (char*) "";
     }
 // #endif
 
 char * BlinkerApi::widgetName_rgb(uint8_t num)
 {
     if (num) return _Widgets_rgb[num - 1]->getName();
-    else return "";
+    else return (char*) "";
 }
 
 char * BlinkerApi::widgetName_int(uint8_t num)
 {
     if (num) return _Widgets_int[num - 1]->getName();
-    else return "";
+    else return (char*) "";
 }
 
 char * BlinkerApi::widgetName_tab(uint8_t num)
 {
     if (num) return _Widgets_tab[num - 1]->getName();
-    else return "";
+    else return (char*) "";
 }
 
 #if defined(BLINKER_ARDUINOJSON)
@@ -14994,7 +14994,7 @@ char * BlinkerApi::widgetName_tab(uint8_t num)
         else {
             free(_masterAT);
 
-            return "";
+            return (char*) "";
         }
     }
 

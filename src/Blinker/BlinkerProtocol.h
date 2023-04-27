@@ -101,18 +101,18 @@ class BlinkerProtocol
             defined(BLINKER_NBIOT_SIM7000) || defined(BLINKER_QRCODE_NBIOT_SIM7000) || \
             defined(BLINKE_HTTP)
             int toServer(char * data) { return isInit ? conn->toServer(data) : false; }
-            char * deviceName() { if (isInit) return conn->deviceName(); else return ""; }
-            char * authKey()    { if (isInit) return conn->authKey(); else return "";  }
-            char * token()    { if (isInit) return conn->token(); else return "";  }
+            char * deviceName() { if (isInit) return conn->deviceName(); else return (char*) ""; }
+            char * authKey()    { if (isInit) return conn->authKey(); else return (char*) "";  }
+            char * token()    { if (isInit) return conn->token(); else return (char*) "";  }
             int init()          { return isInit ? conn->init() : false; }
             int mConnected()    { return isInit ? conn->mConnected() : false; }
             void freshAlive() { if (isInit) conn->freshAlive(); }
         #endif
 
         #if defined(BLINKER_LOWPOWER_AIR202)
-            char * deviceName() { if (isInit) return conn->deviceName(); else return ""; }
-            char * authKey()    { if (isInit) return conn->authKey(); else return "";  }
-            char * token()    { if (isInit) return conn->token(); else return "";  }
+            char * deviceName() { if (isInit) return conn->deviceName(); else return (char*) ""; }
+            char * authKey()    { if (isInit) return conn->authKey(); else return (char*) "";  }
+            char * token()    { if (isInit) return conn->token(); else return (char*) "";  }
             int init()          { return isInit ? conn->init() : false; }
             void begin(const char* _key, const char* _type, String _imei) { conn->begin(_key, _type, _imei); }
             int deviceRegister(){ return conn->deviceRegister(); }
@@ -254,7 +254,7 @@ class BlinkerProtocol
         #endif
         void checkFormat();
         void checkAutoFormat();
-        char* dataParse()       { if (canParse) return conn->lastRead(); else return ""; }
+        char* dataParse()       { if (canParse) return conn->lastRead(); else return (char*) ""; }
         char* lastRead()        { return conn->lastRead(); }
         void isParsed()         { BLINKER_LOG_ALL(BLINKER_F("isParsed")); flush(); }
         int parseState()        { return canParse; }
