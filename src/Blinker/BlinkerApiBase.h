@@ -193,7 +193,7 @@ class BlinkerWidgets_table
             char * getName()
             {
                 if (_register) return bName;
-                else return "false";
+                else return (char*) "false";
             }
             void name(const String & name)
             {
