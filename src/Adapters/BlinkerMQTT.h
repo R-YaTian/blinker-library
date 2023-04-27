@@ -141,7 +141,7 @@ class BlinkerMQTT : public BlinkerStream
         //             char *name2, char *type2, char *data2);
         char * deviceName();
         char * authKey() { return _authKey; }
-        char * token() { if (!isMQTTinit) return ""; else return MQTT_KEY_MQTT; }
+        char * token() { if (!isMQTTinit) return (char*) ""; else return MQTT_KEY_MQTT; }
         int init() { if (!isMQTTinit) checkInit(); return isMQTTinit; }
         int reRegister() { return connectServer(); }
         void freshAlive() { kaTime = millis(); isAlive = true; }
@@ -960,7 +960,7 @@ void BlinkerMQTT::parseData(const char* data)
 char * BlinkerMQTT::lastRead()
 {
     if (isFresh_MQTT) return msgBuf_MQTT;
-    else return "";
+    else return (char*) "";
 }
 
 void BlinkerMQTT::flush()
